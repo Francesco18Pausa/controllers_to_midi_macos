@@ -4,7 +4,9 @@ import time
 import sys
 import tkinter as tk
 from tkinter import ttk
-from midi.output import MidiRouter
+
+# Import editor PS4 mapping
+from gui.ps4_mapping_editor import PS4MappingEditor
 
 
 # ----------------------------------------------------
@@ -70,19 +72,6 @@ class LauncherGUI:
         self.text.pack(padx=10, pady=10)
 
         # ----------------------------------------------------
-        # MENU MIDI
-        # ----------------------------------------------------
-        ports = MidiRouter.list_ports()
-        self.selected_port = tk.StringVar(value=ports[0] if ports else "")
-
-        port_frame = tk.Frame(root)
-        port_frame.pack(pady=5,)
-
-        tk.Label(port_frame, text="Porta MIDI:", font=("Segoe UI", 10)).pack(side="left",)
-        self.port_menu = ttk.OptionMenu(port_frame, self.selected_port, self.selected_port.get(), *ports)
-        self.port_menu.pack(side="left", padx=10)
-
-        # ----------------------------------------------------
         # LISTA CONTROLLER
         # ----------------------------------------------------
         self.controller_list = tk.Label(
@@ -92,7 +81,6 @@ class LauncherGUI:
             anchor="w",
             width=50
         )
-
         self.controller_list.pack(padx=10, pady=5, anchor="w")
 
         # ----------------------------------------------------
@@ -109,6 +97,12 @@ class LauncherGUI:
 
         self.popup_btn = ttk.Button(btn_frame, text="Popup Display", command=self.toggle_popup)
         self.popup_btn.grid(row=0, column=2, padx=5)
+
+        # ----------------------------------------------------
+        # NUOVO BOTTONE: PS4 MAPPING
+        # ----------------------------------------------------
+        self.mapping_btn = ttk.Button(btn_frame, text="PS4 Mapping", command=self.open_ps4_mapping)
+        self.mapping_btn.grid(row=0, column=3, padx=5)
 
     # ----------------------------------------------------
     # LOG
@@ -128,6 +122,12 @@ class LauncherGUI:
             self.popup = None
 
     # ----------------------------------------------------
+    # APRI EDITOR PS4 MAPPING
+    # ----------------------------------------------------
+    def open_ps4_mapping(self):
+        PS4MappingEditor(self.root)
+
+    # ----------------------------------------------------
     # AVVIO PROCESSO
     # ----------------------------------------------------
     def start_script(self):
@@ -137,7 +137,7 @@ class LauncherGUI:
         self.append_log("Avvio controller...\n")
 
         self.process = subprocess.Popen(
-            [sys.executable, "-u", "main.py", self.selected_port.get()],
+            [sys.executable, "-u", "main.py"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -168,7 +168,6 @@ class LauncherGUI:
                 mode = line.split(":")[1].strip()
                 self.popup.update_wii(mode)
 
-
             # Controller connessi/disconnessi
             if "attivato" in line or "disconnesso" in line:
                 self.update_controller_list(line.strip())
@@ -192,7 +191,6 @@ class LauncherGUI:
             self.controller_list.config(text="Controller: " + ", ".join(sorted(controllers)))
         else:
             self.controller_list.config(text="Controller: nessuno")
-
 
     # ----------------------------------------------------
     # LETTURA STDERR

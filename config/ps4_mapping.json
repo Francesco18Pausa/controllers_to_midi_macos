@@ -1,0 +1,283 @@
+{
+    "FX": {
+        "note_channel": 2,
+        "cc_channel": 2,
+        "buttons": {
+            "X": {
+                "type": "cc_fixed",
+                "value": 32,
+                "fixed": 20,
+                "channel": 2
+            },
+            "Cerchio": {
+                "type": "cc_fixed",
+                "value": 32,
+                "fixed": 60,
+                "channel": 2
+            },
+            "Quadrato": {
+                "type": "cc_fixed",
+                "value": 32,
+                "fixed": 90,
+                "channel": 2
+            },
+            "Triangolo": {
+                "type": "cc_fixed",
+                "value": 32,
+                "fixed": 120,
+                "channel": 2
+            },
+            "DPadUp": {
+                "type": "note",
+                "value": 40,
+                "channel": 2
+            },
+            "DPadRight": {
+                "type": "note",
+                "value": 41,
+                "channel": 2
+            },
+            "DPadDown": {
+                "type": "note",
+                "value": 42,
+                "channel": 2
+            },
+            "DPadLeft": {
+                "type": "note",
+                "value": 43,
+                "channel": 2
+            },
+            "L1": {
+                "type": "cc_ramp_down",
+                "value": 33,
+                "channel": 2
+            },
+            "R1": {
+                "type": "cc_ramp_up",
+                "value": 33,
+                "channel": 2
+            }
+        },
+        "axes": {
+            "l3x": {
+                "pos": {
+                    "cc": 22,
+                    "channel": 2
+                },
+                "neg": {
+                    "cc": 23,
+                    "channel": 2
+                }
+            },
+            "l3y": {
+                "pos": {
+                    "cc": 26,
+                    "channel": 2
+                },
+                "neg": {
+                    "cc": 27,
+                    "channel": 2
+                }
+            },
+            "r3x": {
+                "pos": {
+                    "cc": 24,
+                    "channel": 2
+                },
+                "neg": {
+                    "cc": 25,
+                    "channel": 2
+                }
+            },
+            "r3y": {
+                "pos": {
+                    "cc": 28,
+                    "channel": 2
+                },
+                "neg": {
+                    "cc": 29,
+                    "channel": 2
+                }
+            },
+            "l2": {
+                "pos": {
+                    "cc": 30,
+                    "channel": 2
+                }
+            },
+            "r2": {
+                "pos": {
+                    "cc": 31,
+                    "channel": 2
+                }
+            }
+        }
+    },
+    "Note": {
+        "note_channel": 1,
+        "cc_channel": 1,
+        "buttons": {
+            "X": {
+                "type": "note",
+                "value": 36,
+                "channel": 1
+            },
+            "Cerchio": {
+                "type": "note",
+                "value": 37,
+                "channel": 1
+            },
+            "Quadrato": {
+                "type": "note",
+                "value": 38,
+                "channel": 1
+            },
+            "Triangolo": {
+                "type": "note",
+                "value": 39,
+                "channel": 1
+            },
+            "DPadUp": {
+                "type": "note",
+                "value": 40,
+                "channel": 1
+            },
+            "DPadRight": {
+                "type": "note",
+                "value": 41,
+                "channel": 1
+            },
+            "DPadDown": {
+                "type": "note",
+                "value": 42,
+                "channel": 1
+            },
+            "DPadLeft": {
+                "type": "note",
+                "value": 43,
+                "channel": 1
+            },
+            "L1": {
+                "type": "cc",
+                "value": 11,
+                "channel": 1,
+                "mode": "decrement"
+            },
+            "R1": {
+                "type": "cc",
+                "value": 11,
+                "channel": 1,
+                "mode": "increment"
+            }
+        },
+        "axes": {
+            "l3x": {
+                "pos": {
+                    "cc": 12,
+                    "channel": 1
+                },
+                "neg": {
+                    "cc": 13,
+                    "channel": 1
+                }
+            },
+            "l3y": {
+                "pos": {
+                    "cc": 16,
+                    "channel": 1
+                },
+                "neg": {
+                    "cc": 17,
+                    "channel": 1
+                }
+            },
+            "r3x": {
+                "pos": {
+                    "cc": 14,
+                    "channel": 1
+                },
+                "neg": {
+                    "cc": 15,
+                    "channel": 1
+                }
+            },
+            "r3y": {
+                "pos": {
+                    "cc": 18,
+                    "channel": 1
+                },
+                "neg": {
+                    "cc": 19,
+                    "channel": 1
+                }
+            },
+            "l2": {
+                "pos": {
+                    "cc": 20,
+                    "channel": 1
+                }
+            },
+            "r2": {
+                "pos": {
+                    "cc": 21,
+                    "channel": 1
+                }
+            }
+        }
+    },
+    "Accordi": {
+        "note_channel": 0,
+        "cc_channel": 3,
+        "buttons": {
+            "X": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 10,
+                "channel": 3
+            },
+            "Quadrato": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 27,
+                "channel": 3
+            },
+            "Cerchio": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 44,
+                "channel": 3
+            },
+            "Triangolo": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 61,
+                "channel": 3
+            },
+            "DPadDown": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 78,
+                "channel": 3
+            },
+            "DPadLeft": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 95,
+                "channel": 3
+            },
+            "DPadRight": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 112,
+                "channel": 3
+            },
+            "DPadUp": {
+                "type": "cc_fixed",
+                "value": 40,
+                "fixed": 127,
+                "channel": 3
+            }
+        },
+        "axes": {}
+    }
+}
